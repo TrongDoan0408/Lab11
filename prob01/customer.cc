@@ -22,3 +22,31 @@
 //     }
 // to tell the compiler that each function belongs to the Customer class.
 // ===================================================================
+Customer::Customer(const std::string &name, int product_count, std::shared_ptr<Customer> next_customer) {
+    name_ = name;
+    product_count_ = product_count;
+    next_customer_ = next_customer;
+}
+
+std::string Customer::GetName() { return name_; }
+
+int Customer::GetProductCount() { return product_count_; }
+
+std::shared_ptr<Customer> Customer::GetNextCustomer() { return next_customer_; }
+
+int Customer::TotalCustomersInLine() {
+    if(next_customer_ == NULL) return 1;
+    return next_customer_->TotalCustomersInLine() + 1;
+}
+
+int Customer::TotalProductsInLine() {
+    if(next_customer_ == NULL) return product_count_;
+    return next_customer_->TotalProductsInLine() + product_count_;
+}
+
+std::string Customer::FirstAlphabeticalCustomerInLine() {
+    if(next_customer_ == NULL) return name_;
+    std::string next_customer = next_customer_->FirstAlphabeticalCustomerInLine();
+    if(next_customer < name_) return next_customer;
+    return name_;
+}

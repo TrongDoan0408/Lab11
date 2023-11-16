@@ -34,6 +34,7 @@ int main() {
   // 1. Print out the total number of customers waiting
   //    in line by invoking TotalCustomersInLine.
   // ======================================================
+  std::cout << adele->TotalCustomersInLine();
   std::cout << std::endl;
 
   std::cout << "Total products to be purchased: ";
@@ -41,6 +42,7 @@ int main() {
   // 2. Print out the total number of products held by
   //    customers in line by invoking TotalProductsInLine.
   // ======================================================
+  std::cout << adele->TotalProductsInLine();
   std::cout << std::endl;
 
   std::cout << "First customer name alphabetically: ";
@@ -49,6 +51,7 @@ int main() {
   //    name comes first alphabetically by invoking
   //    FirstAlphabeticalCustomerInLine.
   // ======================================================
+  std::cout << adele->FirstAlphabeticalCustomerInLine();
   std::cout << std::endl;
   return 0;
 }

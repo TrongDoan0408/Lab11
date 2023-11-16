@@ -22,6 +22,13 @@ class Customer {
   //    You do not need to create mutator functions (setters).
   // 3. Define the recursive functions specified in the README.
   // ============================================================
+    Customer(const std::string &name, int product_count, std::shared_ptr<Customer> next_customer);
+    std::string GetName();
+    int GetProductCount();
+    std::shared_ptr<Customer> GetNextCustomer();    
+    int TotalCustomersInLine();
+    int TotalProductsInLine();
+    std::string FirstAlphabeticalCustomerInLine();
 
  private:
   std::string name_;
